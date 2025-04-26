@@ -13,6 +13,7 @@
             align-items: center;
             gap: 2rem;
             padding: 2rem;
+            transition: transform 0.3s;
         }
 
         @media (min-width: 768px) {
@@ -24,14 +25,31 @@
 
         .instructor-image {
             flex-shrink: 0;
-            width: 250px;
+            width: 280px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+            border: 5px solid white;
+        }
+
+        .instructor-image:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
         }
 
         .instructor-info {
             flex-grow: 1;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .instructor-info:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
 
         .career-list {
@@ -43,29 +61,38 @@
             margin-bottom: 1rem;
             padding-left: 1.5rem;
             position: relative;
+            transition: transform 0.2s;
         }
 
         .career-list li::before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #2e3192;
+            color: #7c7bac; /* 파스텔 퍼플 */
             font-weight: bold;
+        }
+
+        .career-list li:hover {
+            transform: translateX(5px);
         }
 
         .back-btn {
             margin-top: 2rem;
             display: inline-block;
-            background-color: #2e3192;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
+            background-color: #a2c4e8; /* 파스텔 블루 */
+            color: #333;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
+            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
         }
 
         .back-btn:hover {
-            background-color: #1d1f5b;
+            background-color: #7fa8d7;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0,0,0,0.15);
         }
     </style>
 </head>
@@ -75,7 +102,20 @@
             <h1>초등 교사를 위한 Notion 실무 역량 강화 연수 (90분)</h1>
             <nav>
                 <ul>
-                    <li><a href="index.html">메인 페이지</a></li>
+                    <li><a href="index.html#overview">연수 개요</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#curriculum">세션</a>
+                        <div class="dropdown-content">
+                            <a href="index.html#session1">세션 1: 도입</a>
+                            <a href="index.html#session2">세션 2: 기본 기능</a>
+                            <a href="index.html#session3">세션 3: 블록 및 단축키</a>
+                            <a href="index.html#session4">세션 4: 템플릿</a>
+                            <a href="index.html#session5">세션 5: 데이터베이스</a>
+                            <a href="index.html#session6">세션 6: 고급 기능</a>
+                            <a href="index.html#session7">세션 7: 마무리</a>
+                        </div>
+                    </li>
+                    <li><a href="instructor.html">강사 소개</a></li>
                 </ul>
             </nav>
         </div>
@@ -90,8 +130,7 @@
                 <div class="instructor-info">
                     <h3>김문정 선생님</h3>
                     <p>안양 박달초등학교 교사</p>
-                    <p>Notion과 디지털 도구를 활용한
-                     교육 콘텐츠 제작 및 학급 운영 전문가입니다.</p>
+                    <p>Notion과 디지털 도구를 활용한 교육 콘텐츠 제작 및 학급 운영 전문가입니다.</p>
                     
                     <h4>주요 경력사항</h4>
                     <ul class="career-list">
